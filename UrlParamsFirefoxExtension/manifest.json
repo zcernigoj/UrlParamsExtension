@@ -1,0 +1,16 @@
+{
+  "name": "Url Params",
+  "version": "0.0.1",
+  "description": "View and edit url params for the current tab.",
+  "permissions": [
+    "activeTab"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
