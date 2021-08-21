@@ -9,7 +9,7 @@ function getUrlParams() {
     wholeUrlDiv.innerHTML += url;
 
     const pathDiv = document.getElementById("url-params-popup-path");
-    pathDiv.innerHTML += url.pathname ? url.pathname : '';
+    pathDiv.innerHTML += urlObj.pathname ? urlObj.pathname : '';
 
     const searchParams = new URLSearchParams(urlObj.search);
     const searchParamsDiv = document.getElementById("url-params-popup-search-params-content");
@@ -20,6 +20,7 @@ function getUrlParams() {
     searchParamsDiv.innerHTML += "</ul>";
 
     const hashDiv = document.getElementById("url-params-popup-anchor-content");
+    hashDiv.innerHTML += urlObj.hash ? JSON.stringify(urlObj.hash) : '';
   });
 };
 getUrlParams();
