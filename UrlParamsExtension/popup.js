@@ -5,22 +5,21 @@ function getUrlParams() {
     const url = tabs[0].url;
     const urlObj = new URL(tabs[0].url);
 
-    const wholeUrlDiv = document.getElementById("url-params-popup-url");
+    const wholeUrlDiv = document.getElementById("url-params-popup-url-content");
     wholeUrlDiv.innerHTML += url;
 
     const pathDiv = document.getElementById("url-params-popup-path");
     pathDiv.innerHTML += url.pathname ? url.pathname : '';
 
     const searchParams = new URLSearchParams(urlObj.search);
-    const searchParamsDiv = document.getElementById("url-params-popup-search-params");
+    const searchParamsDiv = document.getElementById("url-params-popup-search-params-content");
     searchParamsDiv.innerHTML += "<ul>";
     for (let [key, value] of searchParams.entries()) {
       searchParamsDiv.innerHTML += `<li><b>${key}:</b> ${value}`;
     }
     searchParamsDiv.innerHTML += "</ul>";
 
-    const hashDiv = document.getElementById("url-params-popup-anchor");
-    hashDiv.innerHTML += url.hash ? url.hash : '';
+    const hashDiv = document.getElementById("url-params-popup-anchor-content");
   });
 };
 getUrlParams();
